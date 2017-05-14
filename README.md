@@ -1,0 +1,1 @@
+# wannacrypt_balance
