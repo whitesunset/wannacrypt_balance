@@ -1,0 +1,24 @@
+.jumbotron{
+    background: url(img/bg.jpg) 100% 45% no-repeat;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+
+.jumbotron:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: #000;
+    opacity: .7;
+    top: 0;
+    left: 0;
+}
+
+.jumbotron .container{
+    position: relative;
+    z-index: 2;
+}
