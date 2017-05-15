@@ -7,19 +7,20 @@ body {
     margin-bottom: 60px;
 }
 
-nav .navbar-right{
+nav .nav{
     color: #9d9d9d;
     font-size: 12px;
     height: 50px;
     display: flex;
     align-items: center;
+    float: right;
 }
 
-nav .navbar-right li{
+nav .nav li{
     display: flex;
     align-items: center;
 }
-nav .navbar-right li div{
+nav .nav li div{
     margin: 0 0 0 10px;
 }
 
