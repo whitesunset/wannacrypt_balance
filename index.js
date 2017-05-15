@@ -26,7 +26,7 @@ function updateAll() {
 
         var currency = values[3]['USD'];
         usd = btc * currency.buy;
-        usd = currency.symbol + Math.round(usd).toLocaleString()
+        usd = currency.symbol + Math.round(usd).toLocaleString();
         $('#usd-total').html('(~' + usd + ')');
 
         btc = Math.round(btc * 100) / 100;
@@ -61,7 +61,20 @@ $(document).ready(function() {
 
     // Toggle Infection map
     $('[data-action="map"]').on('click', function() {
-        $('#map').toggleClass('visible');
+        var $map = $('#map');
+        var $wrapper = $('#map .wrapper');
+        var $iframe = $('<iframe src="https://intel.malwaretech.com/WannaCrypt.html"></iframe>');
+        var visible = $map.hasClass('visible');
+
+        if (visible) {
+            $wrapper.empty();
+            $('#map').removeClass('visible');
+        } else {
+            $wrapper.html($iframe);
+            $('iframe', $wrapper).on('load', function() {
+                $('#map').addClass('visible');
+            });
+        }
     });
 });
 
