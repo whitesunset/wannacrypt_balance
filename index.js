@@ -10,7 +10,6 @@
     var btc = 0;
     var usd = 0;
     var wallets_interval = 10000; // 10 seconds
-    var ticker_interval = 300000; // 5 minutes
 
     function donationButtonInit() {
         CoinWidgetCom.go({
