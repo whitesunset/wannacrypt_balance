@@ -88,8 +88,6 @@ nav .nav li div{
 
 /* Poll */
 .poll > div{
-    width: auto !important;
-    max-width: 100% !important;
 }
 
 .poll .OPP-div-around-poll{
@@ -98,7 +96,6 @@ nav .nav li div{
 
 .poll .OPP-choiceBar{
     height: 15px !important;
-    width: 50% !important;
     float: left !important;
 }
 
