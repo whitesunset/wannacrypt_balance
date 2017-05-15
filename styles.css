@@ -96,12 +96,10 @@ nav .nav li div{
 
 .poll .OPP-choiceBar{
     height: 15px !important;
-    float: left !important;
 }
 
 .poll .OPP-choiceBar div{
     border-radius: 3px;
-
 }
 
 .poll .OPP-choiceBar div:nth-child(2){
