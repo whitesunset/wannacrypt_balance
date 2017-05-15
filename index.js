@@ -9,7 +9,7 @@
     var promises = [];
     var btc = 0;
     var usd = 0;
-    var wallets_interval = 10000; // 10 seconds
+    var wallets_interval = 15000; // 10 seconds
 
     function donationButtonInit() {
         CoinWidgetCom.go({
@@ -98,5 +98,8 @@
 
         // Init donation button
         donationButtonInit();
+
+        // Init GA knocking
+        riveted.init();
     });
 })(jQuery);
