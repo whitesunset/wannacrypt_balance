@@ -1,40 +1,63 @@
 var wallet_api_url = 'https://blockchain.info/ru/q/addressbalance/';
+var ticker_api_url = 'https://blockchain.info/ru/ticker?cors=true';
 var wallets = [
     '115p7UMMngoj1pMvkpHijcRdfJNXj6LrLn',
     '13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94',
     '12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw',
 ];
 var promises = [];
+var btc = 0;
+var usd = 0;
 
-function updateWallets() {
-    wallets.forEach(function(wallet, i, arr) {
-        updateWallet(wallet, i);
-    });
+function updateAll() {
+    btc = 0;
+
+    updateWallets();
+    updateTicker();
 
     Promise.all(promises).then(function(values) {
-        var total = 0;
-
-        values.forEach(function(item, i, arr) {
-            var amount = item / 100000000;
-            total += amount;
+        wallets.forEach(function(item, i, arr) {
+            var amount = values[i] / 100000000;
+            btc += amount;
             $('.wallets > div .wallet').eq(i).html(amount);
         });
 
-        total = Math.round(total * 100) / 100;
+        var currency = values[3]['USD'];
+        usd = btc * currency.buy;
+        usd = currency.symbol + Math.round(usd).toLocaleString()
+        $('#usd-total').html('(~' + usd + ')');
 
-        $('#total').html(total);
+        btc = Math.round(btc * 100) / 100;
+        $('#btc-total').html(btc);
     });
 }
 
-function updateWallet(wallet, i) {
+function updateWallets() {
+    wallets.forEach(function(wallet, i, arr) {
+        updateWallet(wallet);
+    });
+}
+
+function updateWallet(wallet) {
     var url = wallet_api_url + wallet;
-    promises[i] = $.get(url);
+    promises.push($.get(url));
+}
+
+function updateTicker() {
+    promises.push($.get(ticker_api_url));
 }
 
 $(document).ready(function() {
-    setInterval(updateWallets, 10000);
-    updateWallets();
+    // Init wallets
+    updateAll();
 
+    // Run wallets auto-update
+    setInterval(updateWallets, 10000);
+
+    // Run ticker auto-update
+    setInterval(updateTicker, 300000);
+
+    // Toggle Infection map
     $('[data-action="map"]').on('click', function() {
         $('#map').toggleClass('visible');
     });
