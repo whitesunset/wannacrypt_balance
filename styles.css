@@ -125,3 +125,7 @@ footer #st-1.st-has-labels .st-btn,
 footer #st-1 .st-btn > span{
     min-width: 0;
 }
+
+footer .source img{
+    width: 32px;
+}
