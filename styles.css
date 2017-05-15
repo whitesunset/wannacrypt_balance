@@ -117,10 +117,11 @@ footer .source{
     align-items: center;
 }
 
-footer .addthis_inline_share_toolbox{
+footer .sharethis-inline-share-buttons{
     margin: 0 10px 0 0;
 }
 
-footer .at-resp-share-element .at-share-btn{
-    margin-bottom: 0;
+footer #st-1.st-has-labels .st-btn,
+footer #st-1 .st-btn > span{
+    min-width: 0;
 }
