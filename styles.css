@@ -96,14 +96,13 @@ nav .nav li div{
 
 .poll .OPP-choiceBar{
     height: 15px !important;
+    position: relative;
 }
 
 .poll .OPP-choiceBar div{
     border-radius: 3px;
-}
-
-.poll .OPP-choiceBar div:nth-child(2){
-    width: 100% !important;
+    position: absolute;
+    left: 0;
 }
 
 footer {
