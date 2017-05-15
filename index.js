@@ -43,12 +43,12 @@
             var usd = 0;
 
             wallets.forEach(function(item, i, arr) {
-                var amount = Math.round(values[i] / 1000000) / 100;
+                var amount = Math.round(values[i] / 100000000 * 100) / 100;
                 btc += amount;
-                $('.wallets > div .wallet').eq(i).html(amount);
+                $('.wallets > div .wallet').eq(i).html(amount.toFixed(2));
             });
 
-            $('#btc-total').html(btc);
+            $('#btc-total').html(btc.toFixed(2));
 
             var currency = values[3]['USD'];
             usd = btc * currency.buy;
