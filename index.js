@@ -1,4 +1,5 @@
 (function($) {
+    var map_url = 'https://intel.malwaretech.com/WannaCrypt.html';
     var wallet_api_url = 'https://blockchain.info/ru/q/addressbalance/';
     var ticker_api_url = 'https://blockchain.info/ru/ticker?cors=true';
     var wallets = [
@@ -6,14 +7,15 @@
         '13AM4VW2dhxYgXeQepoHkHSQuy6NgaEb94',
         '12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw',
     ];
+    var donation_wallet = '1HF86CnYduNw3NGwAD2Tu5iCJqzmxT9cBd'
     var promises = [];
     var btc = 0;
     var usd = 0;
-    var wallets_interval = 15000; // 10 seconds
+    var wallets_interval = 15000; // 15 seconds
 
     function donationButtonInit() {
         CoinWidgetCom.go({
-            wallet_address: '1CiDy8tuu5k4f2UTUZqLBjgjT82PDexuvz',
+            wallet_address: donation_wallet,
             currency: 'bitcoin',
             counter: 'count',
             lbl_button: 'Donate',
@@ -82,7 +84,7 @@
             var $map = $('#map');
             var $wrapper = $('#map .wrapper');
             var $iframe = $(
-                '<iframe src="https://intel.malwaretech.com/WannaCrypt.html"></iframe>');
+                '<iframe src="' + map_url + '"></iframe>');
             var visible = $map.hasClass('visible');
 
             if (visible) {
