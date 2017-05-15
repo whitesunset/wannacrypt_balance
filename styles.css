@@ -132,3 +132,9 @@ footer #st-1.st-has-labels .st-btn.st-remove-label > span{
 footer .source img{
     width: 32px;
 }
+
+@media (min-width: 768px){
+    footer .source {
+        justify-content: flex-start;
+    }
+}
