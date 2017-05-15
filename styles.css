@@ -11,6 +11,9 @@ nav .navbar-right{
     color: #fff;
     font-size: 12px;
     height: 50px;
+}
+
+nav .navbar-right li{
     display: flex;
     align-items: center;
 }
