@@ -33,6 +33,8 @@
     }
 
     function updateAll() {
+        promises = [];
+
         updateWallets();
         updateTicker();
 
@@ -41,12 +43,11 @@
             var usd = 0;
 
             wallets.forEach(function(item, i, arr) {
-                var amount = values[i] / 100000000;
+                var amount = Math.round(values[i] / 1000000) / 100;
                 btc += amount;
                 $('.wallets > div .wallet').eq(i).html(amount);
             });
 
-            btc = Math.round(btc * 100) / 100;
             $('#btc-total').html(btc);
 
             var currency = values[3]['USD'];
