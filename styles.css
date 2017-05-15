@@ -87,7 +87,8 @@ nav .nav li div{
 }
 
 /* Poll */
-.poll > div{
+.poll #OPP-poll-question-text{
+    font-family: 'Arial', sans-serif !important;
 }
 
 .poll .OPP-div-around-poll{
@@ -100,8 +101,10 @@ nav .nav li div{
     overflow: hidden;
 }
 
-.poll .OPP-choiceBar div{
-
+.poll .OPP-result-summarydiv{
+    font-size: 12px;
+    color: #5d5d5d;
+    padding-top: 10px !important;
 }
 
 footer {
