@@ -9,8 +9,6 @@
     ];
     var donation_wallet = '1HF86CnYduNw3NGwAD2Tu5iCJqzmxT9cBd'
     var promises = [];
-    var btc = 0;
-    var usd = 0;
     var wallets_interval = 15000; // 15 seconds
 
     function donationButtonInit() {
@@ -35,7 +33,8 @@
     }
 
     function updateAll() {
-        btc = 0;
+        var btc = 0;
+        var usd = 0;
 
         updateWallets();
         updateTicker();
