@@ -46,13 +46,13 @@
                 $('.wallets > div .wallet').eq(i).html(amount);
             });
 
+            btc = Math.round(btc * 100) / 100;
+            $('#btc-total').html(btc);
+
             var currency = values[3]['USD'];
             usd = btc * currency.buy;
             usd = currency.symbol + Math.round(usd).toLocaleString();
             $('#usd-total').html('(~' + usd + ')');
-
-            btc = Math.round(btc * 100) / 100;
-            $('#btc-total').html(btc);
         });
     }
 
@@ -77,9 +77,6 @@
 
         // Run wallets auto-update
         setInterval(updateAll, wallets_interval);
-
-        // Run ticker auto-update
-        setInterval(updateTicker, ticker_interval);
 
         // Toggle Infection map
         $('[data-action="map"]').on('click', function() {
