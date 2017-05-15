@@ -134,6 +134,10 @@ footer .source img{
 }
 
 @media (max-width: 768px){
+    .navbar-header{
+        float: left;
+    }
+
     .jumbotron{
         padding-top: 100px;
     }
