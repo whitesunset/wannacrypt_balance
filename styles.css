@@ -111,9 +111,10 @@ footer .author{
     margin: 0 10px 0 0;
 }
 
-footer .source{
+footer .source-col{
     justify-content: flex-end;
     align-items: center;
+    min-height: 42px;
 }
 
 footer .sharethis-inline-share-buttons{
