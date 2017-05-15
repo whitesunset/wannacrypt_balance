@@ -96,6 +96,14 @@ nav .nav li div{
     padding: 0 !important;
 }
 
+.poll .OPP-choiceBar{
+    height: 15px;
+}
+
+.poll .OPP-choiceBar div{
+    border-radius: 3px;
+}
+
 footer {
     position: absolute;
     bottom: 0;
