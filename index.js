@@ -33,13 +33,13 @@
     }
 
     function updateAll() {
-        var btc = 0;
-        var usd = 0;
-
         updateWallets();
         updateTicker();
 
         Promise.all(promises).then(function(values) {
+            var btc = 0;
+            var usd = 0;
+
             wallets.forEach(function(item, i, arr) {
                 var amount = values[i] / 100000000;
                 btc += amount;
