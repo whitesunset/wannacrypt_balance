@@ -8,14 +8,19 @@ body {
 }
 
 nav .navbar-right{
-    color: #fff;
+    color: #9d9d9d;
     font-size: 12px;
     height: 50px;
+    display: flex;
+    align-items: center;
 }
 
 nav .navbar-right li{
     display: flex;
     align-items: center;
+}
+nav .navbar-right li div{
+    margin: 0 0 0 10px;
 }
 
 .jumbotron {
@@ -109,4 +114,12 @@ footer .author{
 footer .source{
     justify-content: flex-end;
     align-items: center;
+}
+
+footer .addthis_inline_share_toolbox{
+    margin: 0 10px 0 0;
+}
+
+footer .at-resp-share-element .at-share-btn{
+    margin-bottom: 0;
 }
