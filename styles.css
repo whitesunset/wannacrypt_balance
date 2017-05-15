@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
+    margin-bottom: 100px;
 }
 
 nav .nav{
@@ -84,6 +84,16 @@ nav .nav li div{
     padding: 3px 8px;
     border-top-left-radius: 4px;
     font-size: 12px;
+}
+
+/* Poll */
+.poll > div{
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+.poll .OPP-div-around-poll{
+    padding: 0 !important;
 }
 
 footer {
