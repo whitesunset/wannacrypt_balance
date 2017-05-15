@@ -54,7 +54,7 @@ $(document).ready(function() {
     updateAll();
 
     // Run wallets auto-update
-    setInterval(updateWallets, wallets_interval());
+    setInterval(updateWallets, wallets_interval);
 
     // Run ticker auto-update
     setInterval(updateTicker, ticker_interval);
