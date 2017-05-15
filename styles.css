@@ -127,7 +127,7 @@ footer #st-1 .st-btn > span{
 
 footer #st-1.st-has-labels .st-btn.st-remove-label,
 footer #st-1.st-has-labels .st-btn.st-remove-label > span{
-    display: inline-block;
+    display: inline-block !important;
 }
 
 footer .source img{
