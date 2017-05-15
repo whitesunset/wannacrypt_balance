@@ -11,6 +11,27 @@ var usd = 0;
 var wallets_interval = 10000; // 10 seconds
 var ticker_interval = 300000; // 5 minutes
 
+function donationButtonInit() {
+    CoinWidgetCom.go({
+        wallet_address: '1CiDy8tuu5k4f2UTUZqLBjgjT82PDexuvz',
+        currency: 'bitcoin',
+        counter: 'count',
+        lbl_button: 'Donate',
+        lbl_count: 'donations',
+        lbl_amount: 'BTC',
+        lbl_address: 'Use address below to donate. Thanks!',
+        qrcode: true,
+        alignment: 'bl',
+        decimals: 8,
+        size: "small",
+        color: "light",
+        countdownFrom: "0",
+        element: "#coinwidget-bitcoin-1CiDy8tuu5k4f2UTUZqLBjgjT82PDexuvz",
+        onShow: function(){},
+        onHide: function(){}
+    });
+}
+
 function updateAll() {
     btc = 0;
 
@@ -76,5 +97,8 @@ $(document).ready(function() {
             });
         }
     });
+
+    // Init donation button
+    donationButtonInit();
 });
 
